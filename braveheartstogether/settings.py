@@ -38,9 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
     'stories',
-    'userprofile'
+    'userprofile',
+    'allauth',
+    'allauth.account',
+    'accounts.apps.AccountsConfig',
+    'home.apps.HomeConfig',
+    'crispy_forms',
+
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
