@@ -13,6 +13,5 @@ class UserProfile(models.Model):
     years_of_service = models.IntegerField()
     deployment_locations = models.CharField(max_length=255)
 
-
     def __str__(self):
         return self.user.username
