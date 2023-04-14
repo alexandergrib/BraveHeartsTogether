@@ -67,6 +67,6 @@ def Email(request):
 def account(request):
     profiles = Profile.objects.filter(user=request.user)
     context = {
-        'profiles': profiles
+        'user': profiles
     }
     return render(request, 'accounts/account.html', context)
