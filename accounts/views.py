@@ -31,7 +31,7 @@ def logout_user(request):
     messages.success(request, "You were logged out")
     return redirect('home')
 
-
+# TODO: create profile on user creation
 def register_user(request):
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
