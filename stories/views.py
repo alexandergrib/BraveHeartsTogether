@@ -8,7 +8,15 @@ from braveheartstogether import settings
 from stories.models import Story
 
 
-# Create your views here.
+def stories(request):
+    all_stories = list(Story.objects.all())
+    context = {
+        'stories': all_stories
+    }
+    template = 'stories/story.html'
+    return render(request, template, context)
+
+
 def add_story(request):
     """Add new product category"""
     all_stories = list(Story.objects.all())
@@ -37,4 +45,3 @@ def add_story(request):
     }
 
     return render(request, template, context)
-#
