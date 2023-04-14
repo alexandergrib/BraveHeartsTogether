@@ -7,8 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from .forms import RegisterUserForm, ProfileForm
 from .models import Profile
-from django.urls import path
-from . import views
+
 
 # login / logout / user registration system
 def login_user(request):
@@ -20,10 +19,11 @@ def login_user(request):
             login(request, user)
             return redirect('index')
         else:
-            messages.success(request, "There was an error logging in, please try again")
+            messages.success(request,
+                             "There was an error logging in, please try again")
             return redirect('login')
     else:
-        return render(request, 'login.html')
+        return render(request, 'accounts/login.html')
 
 
 def logout_user(request):
@@ -41,7 +41,7 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request, ("Resigstration successful!"))
+            messages.success(request, "Registration successful!")
             return redirect('profile')
     else:
         form = RegisterUserForm()
