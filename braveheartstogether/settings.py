@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'crispy_forms',
-    'bootstrap4',
+
     'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
     'stories',
@@ -67,9 +67,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'braveheartstogether.urls'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 TEMPLATES = [
     {
@@ -162,5 +159,3 @@ AWS_DEFAULT_ACL = 'public-read'
 AWS_STORAGE_BUCKET_NAME = "braveheart"
 AWS_S3_ENDPOINT_URL = f'https://cdn.gradko.ovh/{AWS_STORAGE_BUCKET_NAME}/'
 AWS_QUERYSTRING_AUTH = False
-
-

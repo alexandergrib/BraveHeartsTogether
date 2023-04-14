@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('userprofile', '0001_initial'),
+        ('accounts', '0001_initial'),
     ]
 
     operations = [
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('nickname', models.CharField(blank=True, default='Anonymous', max_length=125, null=True)),
                 ('anonymous', models.BooleanField(default=False)),
                 ('image', models.ImageField(blank=True, null=True, upload_to='blog_media', verbose_name='Blog image')),
-                ('name', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='userprofile.userprofile')),
+                ('name', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='accounts.profile')),
             ],
         ),
         migrations.CreateModel(

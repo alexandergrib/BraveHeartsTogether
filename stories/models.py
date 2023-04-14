@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
-from userprofile.models import UserProfile
+from accounts.models import Profile
 
 
 class Story(models.Model):
@@ -16,7 +16,7 @@ class Story(models.Model):
     image = models.ImageField(null=True, blank=True,
                               upload_to='blog_media',
                               )
-    username = models.ForeignKey(UserProfile, null=True, blank=True,
+    username = models.ForeignKey(Profile, null=True, blank=True,
                                  on_delete=models.DO_NOTHING)
 
 
