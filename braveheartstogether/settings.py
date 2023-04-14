@@ -68,6 +68,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'braveheartstogether.urls'
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-alexandergr-bravehearts-vaek4k3e6hj.ws-eu94.gitpod.io']
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
