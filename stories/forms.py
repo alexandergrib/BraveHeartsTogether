@@ -6,6 +6,6 @@ class StoryForm(forms.ModelForm):
     class Meta:
         model = Story
         fields = ('title', 'story_text',
-                  'nickname', 'username', 'anonymous', 'image')
+                  'nickname', 'anonymous', 'image')
 
 
