@@ -45,10 +45,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'crispy_forms',
 
-    'accounts.apps.AccountsConfig',
+    # 'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
+    'accounts',
     'stories',
-    'userprofile',
 ]
 
 AUTHENTICATION_BACKENDS = [

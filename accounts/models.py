@@ -12,4 +12,4 @@ class Profile(models.Model):
     Email = models.EmailField(max_length=20, help_text='Email', blank=False, null=False)
 
     def __str__(self):
-        return f"day: {self.day} | time: {self.time}"
+        return f"{self.user}"
