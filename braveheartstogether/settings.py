@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
+
 
 if os.path.exists("env.py"):
     import env
@@ -38,14 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stories',
-    'userprofile',
+    'storages',
     'allauth',
     'allauth.account',
-    'accounts.apps.AccountsConfig',
-    'home.apps.HomeConfig',
     'crispy_forms',
 
+    'accounts.apps.AccountsConfig',
+    'home.apps.HomeConfig',
+    'stories',
+    'userprofile',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -64,6 +67,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'braveheartstogether.urls'
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-alexandergr-bravehearts-vaek4k3e6hj.ws-eu94.gitpod.io']
+
 
 TEMPLATES = [
     {
@@ -128,18 +134,31 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
 
-MEDIA_URL = '/media/'
-
+# MEDIA_URL = '/media/'
+MEDIA_URL = f'https://cdn.gradko.ovh/braveheart/media/blog_media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# S3 configuration
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_DEFAULT_ACL = 'public-read'
+AWS_STORAGE_BUCKET_NAME = "braveheart"
+AWS_S3_ENDPOINT_URL = f'https://cdn.gradko.ovh/{AWS_STORAGE_BUCKET_NAME}/'
+AWS_QUERYSTRING_AUTH = False

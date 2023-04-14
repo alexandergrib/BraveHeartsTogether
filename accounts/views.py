@@ -45,7 +45,7 @@ def register_user(request):
             return redirect('profile')
     else:
         form = RegisterUserForm()
-    return render(request, 'register_user.html', {'form': form, })
+    return render(request, 'accounts/register_user.html', {'form': form, })
 
 
 # form inputs
@@ -69,4 +69,4 @@ def account(request):
     context = {
         'profiles': profiles
     }
-    return render(request, 'templates/account.html', context)
+    return render(request, 'accounts/account.html', context)
