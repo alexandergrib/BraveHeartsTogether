@@ -3,5 +3,6 @@ from . import views
 from django.contrib.auth import views as auth_view
 
 urlpatterns = [
-    path('stories/', views.add_story, name='add_story')
+    path('', views.add_story, name='stories'),
+    path('add_story/', views.add_story, name='add_story')
 ]

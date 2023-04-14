@@ -24,11 +24,8 @@
 
 
 
-<form method="POST" action="{% url 'add_story' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add</button>
-</form>
+{# Form to add new story #}
+{% include 'stories/add_story.html' %}
 
 </body>
 </html>
