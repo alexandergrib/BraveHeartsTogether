@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import PermissionDenied
+
+from accounts.models import Profile
 from stories.forms import StoryForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -26,11 +28,14 @@ def add_story(request):
     if request.method == 'POST':
         form = StoryForm(request.POST, request.FILES)
         if form.is_valid():
+            user = form.save(commit=False)
             images = request.FILES.getlist('image')
-            print(images)
-            story = form.save()
+            print(request.user.id)
+            # username = Profile.objects.get(user=request.user)
+            # print(username)
+            user.save()
 
-            messages.success(request, f'Successfully added "{story.title}"')
+            messages.success(request, f'Successfully added "{form.title}"')
             return redirect('add_story')
         else:
             messages.error(

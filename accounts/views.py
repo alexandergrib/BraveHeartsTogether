@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 from .forms import RegisterUserForm, ProfileForm
-from .models import Profile
+from accounts.models import Profile
 
 
 # login / logout / user registration system
@@ -29,7 +29,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, "You were logged out")
-    return redirect('login')
+    return redirect('home')
 
 
 def register_user(request):
