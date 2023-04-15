@@ -1,5 +1,7 @@
 <form method="POST" action="{% url 'add_story' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add</button>
+
+    <button type="submit" id="add-story-btn">Add</button>
+
 </form>

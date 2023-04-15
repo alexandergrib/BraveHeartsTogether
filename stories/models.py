@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 from accounts.models import Profile
+from django.contrib.auth.models import User
 
 
 class Story(models.Model):
@@ -16,8 +17,8 @@ class Story(models.Model):
     image = models.ImageField(null=True, blank=True,
                               upload_to='blog_media',
                               )
-    username = models.ForeignKey(Profile, null=True, blank=True,
-                                 on_delete=models.DO_NOTHING)
+    username = models.OneToOneField(User, null=True, blank=True,
+                                    on_delete=models.CASCADE)
 
 
 class StoryReactions(models.Model):
