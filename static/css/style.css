@@ -78,9 +78,53 @@ h1 {
     object-fit: cover;
 }
 
-#gaps between cards
-.card{
+/* Stories page*/
+
+.stories-header {
+    padding-top: 6em;
+}
+
+#main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-card{
+    display: flex;
+    width: 70% !important;
+    height: 320px;
     margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: #4a4a4a solid 1px;
+    background-color: #fafafa;
+}
+
+.card-img {
+    padding: 0 10px;
+    width: 100%;
+}
+
+.card-text {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#story-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+#like-btn {
+    width: 80px;
+    background-color: rgb(84, 84, 248);
+    color: #fafafa;
 }
 
 /*About Page*/
