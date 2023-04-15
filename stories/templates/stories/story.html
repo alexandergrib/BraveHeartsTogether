@@ -1,5 +1,5 @@
 <div class="container">
-{% extends 'base.html' %}
+    {% extends 'base.html' %}
 </div>
 
 {% block content %}
@@ -7,35 +7,36 @@
     <br>
     <h1>Recent Stories</h1>
 
-        {% for story in stories %}
-        <div class = "container pt-3">
-            <div class= "card flex-row flex-wrap">
-                <div class ="card-header border-0">
+    {% for story in stories %}
+        <div class="container pt-3">
+            <div class="card flex-row flex-wrap">
+                <div class="card-header border-0">
                     <div class="col s12 mt-4">
                         <ul>
                             <li>
                                 <div class="card-block px-2">
                                     <h2>{{ story.title }}</h2>
                                 </div>
-                                    <div class="card-block px-2">
+                                <div class="card-block px-2">
                                     {{ story.story_text }}
                                     {% if story.image %}
-                                        <img src="{{ story.image.url }}" alt="" width="50" height="50" style="width: 50px; height: 50px;">
-                                    </div>    
-                                {% endif %}
-                                <a href="#" class="btn btn-primary">like</a>
-                                </div>
+                                        <img src="{{ story.image.url }}" alt="" width="50" height="50"
+                                             style="width: 50px; height: 50px;">
+                                        </div>
+                                    {% endif %}
                             </li>
                         </ul>
+                        <a href="#" class="btn btn-primary">like</a>
                     </div>
                 </div>
             </div>
         </div>
+
     {% endfor %}
 
 
 
-{# Form to add new story #}
-{% include 'stories/add_story.html' %}
+    {# Form to add new story #}
+    {% include 'stories/add_story.html' %}
 
 {% endblock %}
