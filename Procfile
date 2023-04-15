@@ -1,1 +1,1 @@
-web: gunicorn braveheartstogether.wsgi:application
+web:gunicorn braveheartstogether.wsgi:application
