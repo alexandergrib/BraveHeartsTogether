@@ -1,35 +1,62 @@
+<div class="container">
+
 {% extends 'base.html' %}
+    {% load static %}
+</div>
 
 {% block content %}
-
-    <div class="container text-center stories-header">
-        <h1>Recent Stories</h1>
-    </div>
+    <br>
+    <br>
+    <h1>Recent Stories</h1>
 
         {% for story in stories %}
-        <div class="container pt-3" id="main-card">
-            <div class="my-card">
-                {% if story.image %}
-                    <div class="card-img">
-                        <img src="{{ story.image.url }}" alt="" id="story-img">
-                    </div>
-                {% endif %}
-                <div class="card-text">
-                    <div class="story-title">
-                        <h2>{{ story.title }}</h2>
-                    </div>
-                        
-                    <div class="story-text">
-                        {{ story.story_text }}
+        <div class = "container pt-3">
+            <div class= "card flex-row flex-wrap">
+                <div class ="card-header border-0">
+                    <div class="col s12 mt-4">
+                        <ul>
+                            <li>
+                                <div class="card-block px-2">
+                                    <h2>{{ story.title }}</h2>
+                                </div>
+                                    <div class="card-block px-2">
+                                    {{ story.story_text }}
+                                    {% if story.image %}
+                                        <img src="{{ story.image.url }}" alt="" width="50" height="50" style="width: 50px; height: 50px;">
+                                    </div>    
+                                {% endif %}
+                               <div>
+    <form action="{% url 'like_post' story.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary{% if request.user in story.likes.all %} active{% endif %}">
+            <i class="fa fa-thumbs-up"></i> Like
+        </button>
+    </form>
+    <p class="count">{{ like_count }}</p>
+</div>
+<div>
+    <form action="{% url 'dislike_post' story.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary{% if request.user in story.dislikes.all %} active{% endif %}">
+            <i class="fa fa-thumbs-down"></i> Dislike
+        </button>
+    </form>
+    <p class="count">{{dislike_count }}</p>
+
+   </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn" id="like-btn">Like</a>     
         </div>
-        {% endfor %}
+
+    {% endfor %}
 
 
-{# Form to add new story #}
-{% include 'stories/add_story.html' %}
+
+<a href="{% url 'add_story' %}" class="btn btn-primary">Contact Us</a>
+
 
 {% endblock %}
