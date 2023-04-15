@@ -2,7 +2,25 @@
 
 {% block content %}
 <ul>
+<div>
+    <form action="{% url 'like_post' story.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary{% if request.user in story.likes.all %} active{% endif %}">
+            <i class="fa fa-thumbs-up"></i> Like
+        </button>
+    </form>
+    <p class="count">{{ like_count }}</p>
+</div>
+<div>
+    <form action="{% url 'dislike_post' story.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary{% if request.user in story.dislikes.all %} active{% endif %}">
+            <i class="fa fa-thumbs-down"></i> Dislike
+        </button>
+    </form>
+    <p class="count">{{dislike_count }}</p>
 
+   </div>
     {% for story in stories %}
         <li>
             {{ story.title }}
