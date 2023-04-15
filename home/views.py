@@ -25,8 +25,7 @@ import random
 def home(request):
     all_stories = list(Story.objects.all())
     number = random.randint(0, len(all_stories))
-    story = Story.objects.get(pk=number)
-    print(story)
+    story = Story.objects.get(pk=all_stories[number].id)
     context = {
         'story': story
     }
