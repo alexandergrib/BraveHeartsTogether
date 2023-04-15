@@ -68,7 +68,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'braveheartstogether.urls'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-alexandergr-bravehearts-vaek4k3e6hj.ws-eu94.gitpod.io', 'https://8000-alexandergr-bravehearts-rty7xmf7l4b.ws-eu94.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://8000-alexandergr-bravehearts-rty7xmf7l4b.ws-eu94.gitpod.io', 'http://127.0.0.1:8000/']
 
 
 TEMPLATES = [
