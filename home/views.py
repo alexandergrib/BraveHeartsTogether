@@ -18,10 +18,19 @@ from .models import *
 from . import views
 from django.views.generic import ListView
 from django.views import generic
+from stories.models import Story
+import random
 
 
 def home(request):
-    return render(request, "home.html", {})
+    all_stories = list(Story.objects.all())
+    number = random.randint(0, len(all_stories))
+    story = Story.objects.get(pk=number)
+    print(story)
+    context = {
+        'story': story
+    }
+    return render(request, "home.html", context)
 
 
 def blog(request):
