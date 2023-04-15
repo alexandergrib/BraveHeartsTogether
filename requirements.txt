@@ -1,4 +1,4 @@
-Django==4.2
+Django>=3
 psycopg2-binary>=2
 django-allauth==0.54
 django-crispy-forms==2.0
