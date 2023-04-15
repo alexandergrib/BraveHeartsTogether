@@ -8,6 +8,14 @@ The site was created by Team Strength After Service as part of the Code Institut
 
 ![Mockup](media/images/mockup.png)
 
+## Wireframes
+
+Wireframes for the site are below
+![Wireframe 1](/images/team-images/wireframe1.png)
+![Wireframe 2](/images/team-images/wireframe2.png)
+![Wireframe 3](/images/team-images/wireframe3.png)
+![Wireframe 4](/images/team-images/wireframe4.png)
+
 ## User Experience (UX)
 
 -   ### User stories
