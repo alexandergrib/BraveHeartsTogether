@@ -12,7 +12,6 @@ from stories.models import Story
 from django.shortcuts import get_object_or_404, redirect
 
 
-
 def stories(request):
     """Display all stories from database"""
     all_stories = list(Story.objects.all())
@@ -94,6 +93,7 @@ def dislike_post(request, story_id):
         # Also remove the user from likes if they previously liked the post
         if request.user in story.likes.all():
             story.likes.remove(request.user)
+
     return redirect('stories')
 
 
