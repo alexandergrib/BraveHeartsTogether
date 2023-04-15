@@ -1,38 +1,38 @@
+<div class="container">
 {% extends 'base.html' %}
+</div>
 
 {% block content %}
-<ul>
+    <br>
+    <br>
+    <h1>Recent Stories</h1>
 
-    {% for story in stories %}
-    <div>
-    <form action="{% url 'like_post' story.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary{% if request.user in story.likes.all %} active{% endif %}">
-            <i class="fa fa-thumbs-up"></i> Like
-        </button>
-    </form>
-    <p class="count text-dark">{{ like_count }}</p>
-</div>
-<div>
-    <form action="{% url 'dislike_post' story.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary{% if request.user in story.dislikes.all %} active{% endif %}">
-            <i class="fa fa-thumbs-down"></i> Dislike
-        </button>
-    </form>
-    <p class="count">{{dislike_count }}</p>
-
-   </div>
-        <li>
-            {{ story.title }}
-            {{ story.story_text }}
-            {% if story.image %}
-                <img src="{{ story.image.url }}" alt="" width="50" height="50" style="width: 50px; height: 50px;">
-            {% endif %}
-
-        </li>
+        {% for story in stories %}
+        <div class = "container pt-3">
+            <div class= "card flex-row flex-wrap">
+                <div class ="card-header border-0">
+                    <div class="col s12 mt-4">
+                        <ul>
+                            <li>
+                                <div class="card-block px-2">
+                                    <h2>{{ story.title }}</h2>
+                                </div>
+                                    <div class="card-block px-2">
+                                    {{ story.story_text }}
+                                    {% if story.image %}
+                                        <img src="{{ story.image.url }}" alt="" width="50" height="50" style="width: 50px; height: 50px;">
+                                    </div>
+                                {% endif %}
+                                <a href="#" class="btn btn-primary">like</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endfor %}
-</ul>
+
 
 
 {# Form to add new story #}

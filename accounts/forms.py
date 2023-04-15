@@ -20,6 +20,12 @@ class RegisterUserForm(UserCreationForm):
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
+    # def save(self, commit=True):
+    #     user = super(RegisterUserForm, self).save(commit)
+    #     print(user)
+    #     # Profile.objects.create(user=user)
+    #     return user
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
