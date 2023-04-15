@@ -97,6 +97,7 @@ h1 {
     height: 320px;
     margin-bottom: 10px;
     align-items: center;
+    justify-content: space-between;
     margin-top: 10px;
     border-radius: 3px;
     border: #4a4a4a solid 1px;
@@ -104,7 +105,14 @@ h1 {
 }
 
 .card-img {
-    width: 300px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.card-text {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
 }
 
 #story-img {
@@ -113,8 +121,10 @@ h1 {
     object-fit: cover;
 }
 
-#add-stories-btn {
-    width: 50px;
+#like-btn {
+    width: 80px;
+    background-color: rgb(84, 84, 248);
+    color: #fafafa;
 }
 
 /*About Page*/
