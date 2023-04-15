@@ -13,6 +13,7 @@ import os
 import sys
 from pathlib import Path
 
+from django.contrib import staticfiles
 
 if os.path.exists("env.py"):
     import env
@@ -145,9 +146,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
+STATIC_URL = f'https://cdn.gradko.ovh/braveheart/staticfiles/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 MEDIAFILES_LOCATION = 'media'
