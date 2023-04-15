@@ -19,6 +19,8 @@ class Story(models.Model):
                               )
     username = models.OneToOneField(User, null=True, blank=True,
                                     on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='story_likes', blank=True)
+    dislikes = models.ManyToManyField(User, related_name='story_dislikes', blank=True)
 
 
 class StoryReactions(models.Model):

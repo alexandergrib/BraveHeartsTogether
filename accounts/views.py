@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+
 from .forms import RegisterUserForm, ProfileForm
 from accounts.models import Profile
 
@@ -25,13 +25,15 @@ def login_user(request):
     else:
         return render(request, 'accounts/login.html')
 
+    print(user)
+
 
 def logout_user(request):
     logout(request)
     messages.success(request, "You were logged out")
     return redirect('home')
 
-# TODO: create profile on user creation
+
 def register_user(request):
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
@@ -65,8 +67,9 @@ def Email(request):
 
 
 def account(request):
-    # user = User.objects.filter(user=request.user)
+    profiles = Profile.objects.filter(user=request.user)
     context = {
-        # 'user': user
+        'user': profiles
     }
     return render(request, 'accounts/account.html', context)
+
