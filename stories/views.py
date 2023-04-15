@@ -30,7 +30,7 @@ def add_story(request):
         if form.is_valid():
             user = form.save(commit=False)
             images = request.FILES.getlist('image')
-            user.username = Profile.objects.get(user=request.user)
+            user.username = User.objects.get(username=request.user)
             user.save()
             messages.success(request, f'Successfully added "{user.title}"')
             return redirect('add_story')
