@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'storages',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'crispy_forms',
 
     # 'accounts.apps.AccountsConfig',
@@ -55,6 +56,9 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,7 +73,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'braveheartstogether.urls'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://8000-alexandergr-bravehearts-rty7xmf7l4b.ws-eu94.gitpod.io', 'http://127.0.0.1:8000/']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://8000-alexandergr-bravehearts-rty7xmf7l4b.ws-eu94.gitpod.io', 'http://127.0.0.1:8000/', 'https://*.codeanyapp.com']
 
 
 

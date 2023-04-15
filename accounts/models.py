@@ -5,9 +5,11 @@ from datetime import datetime
 from django.utils import timezone
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+# from django.views.generic import CreateView
 
 
 class Profile(models.Model):
+    objects = models.Manager()
     user = models.OneToOneField(User, null=False,
                                 on_delete=models.CASCADE)
     First_name = models.CharField(max_length=25,
@@ -18,11 +20,19 @@ class Profile(models.Model):
                                  blank=False, null=False)
     Email = models.EmailField(max_length=20, help_text='Email',
                               blank=False, null=False)
+    About = models.CharField(max_length=200,
+                                  help_text='About',
+                                  blank=False, null=False)
 
     def __str__(self):
         return f"{self.user}"
 
-#
+
+# class CreateProfilePageView(CreateView):
+#     model = Profile
+#     template_name = "accounts/create_user_profile_page.html"
+
+
 # @receiver(post_save, sender=User)
 # def create_or_update_user_profile(sender, instance, created, **kwargs):
 #     """
