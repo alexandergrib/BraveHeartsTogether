@@ -1,14 +1,15 @@
 
 from django.urls import path, include
 from accounts import views
+from . import views
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-
-    path('', views.account, name='account'),
-    path('login/', views.login_user, name="login"),
-    path('logout/', views.logout_user, name='logout'),
-    path('register_user/', views.register_user, name="register_user"),
-    # path('notRegistered/', views.notRegistered, name="notRegistered"),
-    # path('edit/<profile_id/>', views.profileEdit, name='edit_user'),
-    # path('delete/<profile_id/>', views.profileDelete, name='delete_user'),
+    path('accounts/', include('allauth.urls')),
+    path('account', views.account, name="account"),
+    path('edit/<int:profile_id>/', views.profileEdit, name='edit_user'),
+    path('delete/<int:profile_id>/', views.profileDelete, name='delete_user'),
+    path('profile', views.profile, name='profile'),
 ]
