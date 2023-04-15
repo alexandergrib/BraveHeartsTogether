@@ -1,37 +1,32 @@
-<div class="container">
 {% extends 'base.html' %}
-</div>
 
 {% block content %}
-    <br>
-    <br>
-    <h1>Recent Stories</h1>
+
+    <div class="container text-center stories-header">
+        <h1>Recent Stories</h1>
+    </div>
 
         {% for story in stories %}
-        <div class = "container pt-3">
-            <div class= "card flex-row flex-wrap">
-                <div class ="card-header border-0">
-                    <div class="col s12 mt-4">
-                        <ul>
-                            <li>
-                                <div class="card-block px-2">
-                                    <h2>{{ story.title }}</h2>
-                                </div>
-                                    <div class="card-block px-2">
-                                    {{ story.story_text }}
-                                    {% if story.image %}
-                                        <img src="{{ story.image.url }}" alt="" width="50" height="50" style="width: 50px; height: 50px;">
-                                    </div>    
-                                {% endif %}
-                                <a href="#" class="btn btn-primary">like</a>
-                                </div>
-                            </li>
-                        </ul>
+        <div class="container pt-3" id="main-card">
+            <div class="my-card">
+                {% if story.image %}
+                    <div class="card-img">
+                        <img src="{{ story.image.url }}" alt="" id="story-img">
+                    </div>
+                {% endif %}
+                <div class="card-text">
+                    <div class="story-title">
+                        <h2>{{ story.title }}</h2>
+                    </div>
+                        
+                    <div class="story-text">
+                        {{ story.story_text }}
                     </div>
                 </div>
             </div>
+            <a href="#" class="btn btn-secondary" id="like-btn">Like</a>     
         </div>
-    {% endfor %}
+        {% endfor %}
 
 
 

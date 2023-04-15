@@ -78,9 +78,43 @@ h1 {
     object-fit: cover;
 }
 
-#gaps between cards
-.card{
+/* Stories page*/
+
+.stories-header {
+    padding-top: 6em;
+}
+
+#main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-card{
+    display: flex;
+    width: 70% !important;
+    height: 320px;
     margin-bottom: 10px;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: #4a4a4a solid 1px;
+    background-color: #fafafa;
+}
+
+.card-img {
+    width: 300px;
+}
+
+#story-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+#add-stories-btn {
+    width: 50px;
 }
 
 /*About Page*/
