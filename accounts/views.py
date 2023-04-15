@@ -25,6 +25,8 @@ def login_user(request):
     else:
         return render(request, 'accounts/login.html')
 
+    print(user)
+
 
 def logout_user(request):
     logout(request)

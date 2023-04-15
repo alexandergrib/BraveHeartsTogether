@@ -80,7 +80,7 @@ def like_post(request, story_id):
         # Also remove the user from dislikes if they previously disliked the post
         if request.user in story.dislikes.all():
             story.dislikes.remove(request.user)
-    return redirect('story', pk=story.pk)
+    return redirect('stories')
 
 
 def dislike_post(request, story_id):
@@ -94,7 +94,7 @@ def dislike_post(request, story_id):
         # Also remove the user from likes if they previously liked the post
         if request.user in story.likes.all():
             story.likes.remove(request.user)
-    return redirect('story', pk=story.pk)
+    return redirect('stories')
 
 
 def post_detail(request, pk):
