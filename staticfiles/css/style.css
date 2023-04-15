@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Raleway:wght@100;400&display=swap');
+
+body {
+    font-family:'Merriweather', serif;
+    font-weight: 100;
+    color: #3a3a3a;
+}
+
+/* headings and logo */
+
+h1 {
+    font-family:'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #252525;
+}
+
+.btn-primary {
+    background-color:white;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color:lightgrey;
+    border: none;
+}
+
+/* navigation bar */
+
+.navbar {
+    position: absolute;
+    top: 0px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+/* landing image and title */
+
+#landing-image {
+    width:100vw;
+    height: 600px;
+    top: 0;
+    right:0;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#title-container {
+    width:100%;
+    height: 600px;
+    display: inline-block;
+}
+
+#title {
+    margin-top:200px;
+}
+
+/* ethos */
+
+#ethos-icons {
+    text-align: center;
+}
+
+/* recent posts */
+
+#post-img {
+    width:300px;
+    height:300px;
+    object-fit: cover;
+}
+
+#gaps between cards
+.card{
+    margin-bottom: 10px;
+}
+
+/*About Page*/
+
+#about-pg {
+    padding-top: 2em;
+}
+
+#team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h3 {
+    font-family:'Raleway', sans-serif;
+    padding: 20px 0;
+}
+
+.team-member p {
+    font-family:'Raleway', sans-serif;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.social-img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* footer */
+
+footer {
+    height: 150px;
+}
+
+.social-icon {
+    padding-right:30px;
+}
+
+/* Media queries */
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+    #club-ethos {
+        width: 65%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    #welcome {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    #left-about, #right-about {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #center-about {
+        clear: both;
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #times > div {
+        width: 100%;
+        clear: both;
+        height: 150px;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
+
+
+}
+
+/* For medium screen sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+
+    #ethos {
+        clear: left;
+        float: left;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        line-height: 25px;
+    }
+}
