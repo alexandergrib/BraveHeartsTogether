@@ -6,7 +6,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+
 from .forms import RegisterUserForm, ProfileForm
 from .models import Profile
 from django.views.generic import ListView
@@ -37,11 +37,14 @@ def login_user(request, username, password):
 
     return render(request, 'accounts/login.html', {})
 
+    print(user)
+
 
 def logout_user(request):
     logout(request)
     messages.success(request, "You were logged out")
     return redirect('login')
+
 
 
 def register_user(request):
@@ -82,6 +85,7 @@ def account(request):
         'user': profiles
     }
     return render(request, 'accounts/account.html', context)
+
 
 
 def profileEdit(request, profile_id):
@@ -134,3 +138,4 @@ def profile(request):
         else:
             messages.success(request, "The profile was not created!")
     return render(request, 'accounts/account.html', context)
+

@@ -1,6 +1,10 @@
 # BraveHeartsTogether
 
+To see the site [click here](https://bravehearts.onrender.com/)
+
 BraveHeartsTogether is a site that aims to help veterans by providing a space where they can write and share their stories and experiences. It allows them to connect with other veterans and feel understood and supported. By sharing their stories, veterans can also help others better understand the challenges they face and raise awareness about veteran mental health. BraveHeartsTogether is a valuable tool to help veterans better manage their mental health and connect with a community of like-minded people.
+
+The site was created by Team Strength After Service as part of the Code Institute and Trust in Soda Hackathon in April 2023.  Team members were Alex, Konstantina, Aiga, Debbie, Ariane and Marlon.  We are all either alumni or students at Code Institute.
 
 ![Mockup](media/images/mockup.png)
 
@@ -12,7 +16,7 @@ BraveHeartsTogether is a site that aims to help veterans by providing a space wh
 
         1. As a User, I can access stories easily through the homepage and navigation bar.
         2. As a User, I can learn about the benefits of the website and its purpose on the homepage.
-        3. As a User, I can easily access social media links so that I can interact with the website.
+        3. As a User, I can add stories to the site.
         4. As a User, I can find out more about the site by clicking on the about page.
 
     -   #### New User Goals
@@ -30,15 +34,16 @@ BraveHeartsTogether is a site that aims to help veterans by providing a space wh
 
 -   ### Design
     -   #### Colour Scheme
-        -   The main colours used are ...
+        -   The main colours used are orange, gold, amber
     -   #### Logo
-        -   The logo was designed to represent ...
+        -   The logo was designed to represent the concept of hearts coming together through inspirational and uplifting stories.
     -   #### Favicon
-        -   The Favicon is ...
+        -   The Favicon is designed to complement the logo and has the same concept of hearts coming together through inspirational and uplifting stories.
     -   #### Typography
-        -   The ... font is the main font used throughout the whole website.
+        -   The  google merriweather font is the main font used throughout the whole website.
     -   #### Imagery
-        -   Imagery is important. The hero image is ...
+        -   Imagery is important. The hero image is designed to be peaceful and relaxing and to encourage people to interact with the site.
+
 
 ## Features 
 
@@ -98,9 +103,13 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 ### Unfixed Bugs
 
-- 
+-  Anonymous functionality proved problematic.
+- Getting the stories to display as we wished was difficult and could be improved.
+- User profiles were difficult to put together and is an area for future development. 
 
 ## Deployment
+
+We deployed the app using render.com.  This took a while as initially we tried to deploy with heroku unsuccessfully.  We also tried railway and then render which took some time to build but which was successful after some time.
 
 ### GitHub Pages
 
@@ -149,6 +158,10 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
+
+All images were from [unsplash](https://unsplash.com/) and [pexels](https://www.pexels.com/) websites and were provided free.
+Stories for the stories page were sourced from [military](https://www.military.com/)
+The logo and favicon were from [the icons8 website](https://icons8.com/)
 
 ### Code
 

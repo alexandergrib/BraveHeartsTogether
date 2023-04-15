@@ -20,9 +20,14 @@ class Profile(models.Model):
                                  blank=False, null=False)
     Email = models.EmailField(max_length=20, help_text='Email',
                               blank=False, null=False)
+
     About = models.CharField(max_length=200,
                                   help_text='About',
                                   blank=False, null=False)
+
+    About = models.CharField(max_length=25,
+                                 help_text='About',
+                                 blank=True, null=True)
 
     def __str__(self):
         return f"{self.user}"

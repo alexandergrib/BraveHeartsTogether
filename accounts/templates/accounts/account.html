@@ -2,7 +2,12 @@
 {% load static %}
 {% block content %}
 
+
 <div class="container-fluid" style="background-color: orange; height:100px; width:100%" id="title-container"></div>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+
   <div class="col">
     <div class="row">
       <div class="col mb-3">
@@ -20,6 +25,7 @@
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
                     {% for profile in profiles %}
+
                     <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
                     <p class="mb-0"></p>
                     {% endfor %}
@@ -35,6 +41,7 @@
               <ul class="nav nav-tabs">
                 <li class="nav-item"><a href="" class="active nav-link">Profile</a></li>
               </ul>
+
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
                     <!-- form starts -->
@@ -44,16 +51,22 @@
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
+
                                 {% for profile in profiles %}
                               <label>{{ profile.First_name }}</label>
                               {% endfor %}
                               <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+
+                              <label>{{ user.First_name }}</label>
+                              <input class="form-control" type="text" name="name" placeholder="your name" value="">
+
                             </div>
                           </div>
+
                           <div class="col">
                             <div class="form-group">
                               <label></label>
-                              <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                              <input class="form-control" type="text" name="username" placeholder="" value="">
                             </div>
                           </div>
                         </div>
@@ -65,6 +78,7 @@
                             </div>
                           </div>
                         </div>
+                        {% endfor %}
                         <div class="row">
                           <div class="col mb-3">
                             <div class="form-group">
@@ -75,6 +89,7 @@
                         </div>
                       </div>
                     </div>
+
                     <div class="row">
                       <div class="col-12 col-sm-6 mb-3">
                         <div class="mb-2"><b>Change Password</b></div>
@@ -102,6 +117,12 @@
                           </div>
                         </div>
                       </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                     <div class="row">
                       <div class="col d-flex justify-content-end">
@@ -118,6 +139,7 @@
       </div>
   </div>
 </div>
-</div>
+
+
 
 {% endblock %}
